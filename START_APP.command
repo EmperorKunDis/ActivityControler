@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-# Alternativní spouštěč který sám nastaví oprávnění
+# Mac Activity Analyzer - Advanced Version
+# Automatický spouštěč s instalací závislostí
 
 echo "🔧 Nastavuji oprávnění..."
 chmod +x "$0"
+chmod +x /Users/martinsvanda/Prace/ActivityControler/START_APP.command
 
-echo "🚀 Spouštím MacMini Activity Analyzer..."
+echo "🚀 Spouštím Mac Activity Analyzer - Advanced Version..."
 
 # Získat adresář skriptu
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -31,12 +33,15 @@ source venv/bin/activate
 if [ ! -f ".deps_installed" ]; then
     echo "📦 Instaluji závislosti (pouze při prvním spuštění)..."
     pip install --upgrade pip --quiet
-    pip install pandas matplotlib pillow python-dateutil --quiet
+    pip install pandas matplotlib --quiet
     touch .deps_installed
 fi
 
 # Spuštění aplikace
-python3 mac_activity_gui.py
+echo "🥦 Spouštím aplikaci..."
+# Choose which version to run:
+# python3 mac_activity_advanced.py  # Original version
+python3 mac_activity_advanced_secure.py  # Secure version with all protections
 
-# Deaktivace
+# Deactivate virtual environment
 deactivate

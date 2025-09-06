@@ -1,5 +1,12 @@
-pandas==2.1.4
-plotly==5.18.0
-python-dateutil==2.8.2
-matplotlib==3.8.2
-pillow==10.1.0
+# Core dependencies for Mac Activity Analyzer
+pandas>=2.1.4
+matplotlib>=3.8.2
+python-dateutil>=2.8.2
+Pillow>=10.1.0
+tkcalendar>=1.6.1
+plotly>=5.18.0
+numpy>=1.24.0
+
+# Note: tkinter is part of Python's standard library on macOS
+# If tkinter is missing, install it via:
+# brew install python-tk

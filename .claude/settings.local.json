@@ -4,7 +4,10 @@
       "Bash(python3:*)",
       "Bash(pmset:*)",
       "Bash(last reboot:*)",
-      "Bash(top:*)"
+      "Bash(top:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(chmod:*)"
     ],
     "deny": []
   }

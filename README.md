@@ -1,116 +1,180 @@
-# MacMini Activity Analyzer 💻
+# Mac Activity Analyzer - Advanced Version 🚀
 
-## Profesionální nástroj pro analýzu aktivity Mac počítače s finančním přehledem
+## Comprehensive macOS Activity Analysis with 7 Specialized Modules
 
-### 🚀 Rychlý start - DVA KLIKY!
+### 🎯 Quick Start
 
-1. **Stáhněte všechny soubory** do jedné složky:
-   - `run.command`
-   - `mac_activity_gui.py`
-   - `requirements.txt`
+**Double-click `START_APP.command`**
+- First run: Allow in Settings → Privacy & Security
+- Automatically installs all dependencies
+- Creates virtual environment
+- Launches the advanced analyzer
 
-2. **Dvojklik na `run.command`**
-   - Při prvním spuštění povolte v Nastavení → Soukromí a zabezpečení
-   - Automaticky se nainstaluje vše potřebné
-   - Aplikace se sama spustí
+That's it! The script handles everything automatically.
 
-### ✨ Funkce
+### ✨ Advanced Features
 
-#### 📊 Vizualizace aktivity
-- **Interaktivní graf** s barevným kódováním:
-  - 🟩 Zelená = Aktivní práce (<60 sekund nečinnosti)
-  - 🔴 Červená = Pauza (>60 sekund nečinnosti)
-  - ⚪ Šedá = Spánek počítače
-  - ⚫ Černá = Vypnutý počítač
+#### 📊 7 Comprehensive Analysis Tabs
 
-#### 💰 Finanční přehled
-- Automatický výpočet odměny (výchozí: 40h = 10 000 Kč)
-- Nastavitelná hodinová sazba
-- Týdenní a měsíční projekce
-- Export do HTML reportu
+1. **📊 Graf aktivity (Activity Graph)**
+   - Interactive matplotlib timeline
+   - Color-coded activity states
+   - Click for detailed information
 
-#### 📈 Statistiky
-- Denní přehled aktivity
-- Celkový souhrn za 10 dní
-- Efektivita práce v procentech
-- Raw data log pro technickou analýzu
+2. **📋 Přehled (Overview)**
+   - Summary statistics
+   - System health metrics
+   - Quick insights
 
-### 🖱️ Interaktivní ovládání
+3. **📱 Aplikace (Application Analysis)** 
+   - Track which apps prevent sleep
+   - App activity pie charts
+   - Power assertion analysis
+   - Identify battery-draining apps
 
-**Kliknutí na graf:**
-- Zobrazí detailní informace o vybraném úseku
-- Ukáže přesný čas začátku a konce
-- Vypočítá finanční hodnotu úseku
-- Zobrazí původní systémové logy
+4. **😴 Spánek/Probuzení (Sleep/Wake Analysis)**
+   - Sleep duration histograms
+   - Wake reason categorization
+   - Sleep pattern heatmaps
+   - Identify sleep disruptions
 
-### 📁 Struktura souborů
+5. **📈 Statistiky (Statistics)**
+   - Mean, median, std deviation
+   - Activity distribution
+   - Pattern detection
+   - Trend analysis
 
-```
-mac-activity-analyzer/
-│
-├── run.command           # Spouštěč (dvojklik pro start)
-├── mac_activity_gui.py   # Hlavní aplikace
-├── requirements.txt      # Python závislosti
-└── README.md            # Tento soubor
-```
+6. **🕒 Timeline**
+   - Granular event display
+   - All event types in one view
+   - Interactive selection
+   - Event filtering
 
-### 🛠️ Požadavky
+7. **💰 Finance**
+   - Configurable hourly rate
+   - Earnings calculation
+   - Productivity metrics
+   - Work hour tracking
 
-- **macOS** (testováno na Mac s M1/M2/M3)
-- **Python 3.8+** (automaticky nainstaluje)
-- **5 MB** volného místa
+### 📊 Data Sources
 
-### 📊 Výstupy
+The advanced version analyzes multiple macOS system logs:
 
-1. **Interaktivní GUI** s 4 taby:
-   - Graf aktivity
-   - Statistiky
-   - Finanční přehled
-   - Raw data
-
-2. **HTML Report** s kompletním přehledem
-   - Finanční souhrn
-   - Detailní tabulka aktivit
-   - Exportovatelný a sdílený
-
-### 🔧 Řešení problémů
-
-**"run.command nelze otevřít"**
 ```bash
-chmod +x run.command
+# Power management events
+pmset -g log | grep -E "Wake|Sleep|Shutdown|Display"
+
+# Application assertions (NEW)
+pmset -g log | grep "Assertions"
+
+# System boot/shutdown
+last reboot | head -50
+last shutdown | head -20
+
+# Kernel logs
+log show --style syslog --predicate 'process == "kernel"'
 ```
 
-**"Python nenalezen"**
-- Script automaticky nainstaluje Python přes Homebrew
+### 🔍 Unique Advanced Capabilities
 
-**"Žádná data"**
-- Ujistěte se, že Mac běží alespoň několik hodin
-- Zkontrolujte oprávnění pro Terminal
+1. **Application Tracking**
+   - Monitors which apps hold wake locks
+   - Tracks app-specific power usage
+   - Identifies problematic applications
 
-### 🎯 Pro firemní použití
+2. **Advanced Sleep Analysis**
+   - Statistical sleep pattern analysis
+   - Wake reason categorization
+   - Sleep quality metrics
 
-Ideální pro:
-- Sledování využití služebních počítačů
-- Fakturaci podle odpracovaných hodin
-- Analýzu produktivity
-- Reporting pro management
+3. **Export/Import**
+   - Save analysis results
+   - Load historical data
+   - Generate reports
 
-### 📝 Poznámky
+4. **Pattern Detection**
+   - Identifies recurring issues
+   - Suggests optimizations
+   - Trend analysis
 
-- Analyzuje posledních 10 dní
-- Data jsou čtena ze systémových logů
-- Žádné sledování v reálném čase
-- Respektuje soukromí - nesleduje obsah práce
+### 🛠️ Technical Details
 
-### 🆘 Podpora
+#### Dependencies
+- **Python 3.8+**
+- **pandas** - Data analysis
+- **matplotlib** - Visualization
+- **tkinter** - GUI (built-in)
 
-Při problémech zkontrolujte:
-1. macOS je aktuální
-2. Terminal má oprávnění (Nastavení → Soukromí)
-3. Složka není v iCloud (lokální disk)
+#### System Requirements
+- **macOS 11+** (Big Sur and newer)
+- **Terminal permissions** for system log access
+- **50 MB** free space (with dependencies)
+
+### 📁 File Structure
+
+```
+ActivityControler/
+├── mac_activity_advanced.py  # Main advanced application (1,232 lines)
+├── START_APP.command        # One-click launcher
+├── requirements.txt         # Python dependencies
+├── README.md               # This file
+├── CLAUDE.md              # AI assistant documentation
+└── memory-bank/           # Project documentation
+```
+
+### 🎯 Use Cases
+
+1. **Developers**: Identify apps causing battery drain
+2. **Power Users**: Optimize system performance
+3. **IT Administrators**: Analyze usage patterns
+4. **Freelancers**: Track billable hours accurately
+5. **Troubleshooting**: Find sleep/wake issues
+
+### 💡 Key Insights Provided
+
+- Which applications prevent your Mac from sleeping
+- How long your system actually sleeps vs stays awake
+- Detailed breakdown of wake reasons
+- Application-specific power impact
+- Work session patterns and productivity metrics
+
+### 🆘 Troubleshooting
+
+**"Permission denied"**
+```bash
+chmod +x START_APP.command
+```
+
+**"No module named pandas"**
+```bash
+pip install -r requirements.txt
+```
+
+**"No data found"**
+- Ensure Terminal has Full Disk Access in System Preferences
+- Mac must have been running for several hours
+- Try running with sudo if needed
+
+### 🔧 Advanced Configuration
+
+The application supports various configuration options:
+- Adjustable analysis time window
+- Configurable idle thresholds
+- Custom export formats
+- Filtering options
+
+### 📈 What Makes This "Advanced"?
+
+1. **7 tabs** instead of 4 (standard version)
+2. **Application-level tracking** with power assertions
+3. **Statistical analysis** with pandas
+4. **Pattern detection** algorithms
+5. **Export/Import** capabilities
+6. **More granular data** extraction
 
 ---
 
-**Verze:** 1.0  
-**Kompatibilita:** macOS 11+ (Big Sur a novější)  
-**Optimalizováno pro:** Apple Silicon (M1/M2/M3)
+**Version:** Advanced Edition  
+**Language:** Czech UI with English documentation  
+**Optimized for:** Power users and system administrators  
+**Last Updated:** 2024
