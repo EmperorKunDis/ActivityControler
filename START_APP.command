@@ -41,7 +41,8 @@ fi
 echo "🥦 Spouštím aplikaci..."
 # Choose which version to run:
 # python3 mac_activity_advanced.py  # Original version
-python3 mac_activity_advanced_secure.py  # Secure version with all protections
+# python3 mac_activity_advanced_secure.py  # Secure version with all protections
+python mac_activity_simple_working.py  # Simple working version - FUNCTIONAL!
 
 # Deactivate virtual environment
 deactivate
